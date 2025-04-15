@@ -1,7 +1,12 @@
 FROM ubuntu:22.04
 
-# Install core Unix tools, Python, nano, and R
+# Avoid interactive prompts and set timezone to Kuala Lumpur
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Kuala_Lumpur
+
+# Install core Unix tools, nano, Python, and R
 RUN apt-get update && apt-get install -y \
+    tzdata \
     python3 \
     python3-pip \
     git \
